@@ -15,13 +15,7 @@
             "configFile": "vite.config.ts",
             "main": "src/main.ts",
             "outputPath": "dist/client",
-            "tsConfig": "tsconfig.app.json",
-            "styles": [
-              "src/styles.css",
-              "./node_modules/quill/dist/quill.core.css",
-              "./node_modules/quill/dist/quill.snow.css"
-            ],
-            "scripts": ["./node_modules/quill/dist/quill.js"]
+            "tsConfig": "tsconfig.app.json"
           },
           "defaultConfiguration": "production",
           "configurations": {

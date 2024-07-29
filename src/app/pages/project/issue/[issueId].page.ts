@@ -14,7 +14,6 @@ import { IssueDetailComponent } from '../_components/issues/issue-detail/issue-d
 
 @Component({
   standalone: true,
-  selector: 'full-issue-detail',
   templateUrl: './full-issue-detail.component.html',
   imports: [BreadcrumbsComponent, IssueDetailComponent, CommonModule],
 })
@@ -54,6 +53,7 @@ export default class FullIssueDetailComponent implements OnInit {
     this.issueId = this._route.snapshot.paramMap.get(
       ProjectConst.IssueId
     ) as string;
+
     if (!this.issueId) {
       this.isModal = true;
       this.backProjectBoard();
