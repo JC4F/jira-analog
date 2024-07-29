@@ -1,0 +1,18 @@
+<div class="flex flex-col h-full rounded-sm pb-5 flex-shrink-0">
+  <div class="px-3 pb-4 pt-3 uppercase truncate">
+    {{ IssueStatusDisplay[status] }}
+    <span class="lowercase">{{ issuesCount }}</span>
+  </div>
+  <div
+    class="h-full px-2"
+    cdkDropList
+    [cdkDropListData]="issues"
+    [id]="status"
+    (cdkDropListDropped)="drop($event)">
+    @for (issue of issues; track issue.id) {
+      <div class="example-box" cdkDrag [cdkDragData]="issue">
+        <issue-card [issue]="issue" />
+      </div>
+    }
+  </div>
+</div>

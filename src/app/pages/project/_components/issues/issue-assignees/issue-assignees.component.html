@@ -1,0 +1,41 @@
+<div class="mt-6 mb-1 uppercase font-bold">Assignees</div>
+
+<button
+  hlmBtn
+  variant="destructive"
+  *ngFor="let assignee of assignees"
+  class="mr-1 mb-2 h-[34px]">
+  <div class="flex items-center">
+    <base-user [user]="assignee"></base-user>
+    <svg-icon
+      (click)="removeUser(assignee.id)"
+      title="Remove user"
+      [size]="20"
+      [name]="'times'"
+      class="">
+    </svg-icon>
+  </div>
+</button>
+
+<a
+  class="cursor-pointer text-xs flex items-center hover:underline"
+  [brnMenuTriggerFor]="menu">
+  <hlm-icon size="sm" name="lucidePlus" />
+  Add Assignee
+</a>
+
+<ng-template #menu>
+  <hlm-menu>
+    <ul>
+      <ng-container *ngFor="let option of users">
+        <li
+          tabindex="0"
+          hlmMenuItem
+          *ngIf="!isUserSelected(option)"
+          (click)="addUserToIssue(option)">
+          <base-user [user]="option"></base-user>
+        </li>
+      </ng-container>
+    </ul>
+  </hlm-menu>
+</ng-template>

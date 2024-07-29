@@ -1,0 +1,20 @@
+<brn-select
+  [formControl]="control"
+  class="inline-block w-full"
+  placeholder="Select an option">
+  <hlm-select-trigger class="w-full">
+    <hlm-select-value />
+  </hlm-select-trigger>
+  <hlm-select-content>
+    <hlm-option *ngFor="let priority of priorities" [value]="priority.value"
+      ><div class="flex items-center">
+        <svg-icon
+          [name]="priority.icon"
+          [size]="20"
+          [style.color]="priority.color">
+        </svg-icon>
+        <span class="ml-3 font-semibold uppercase">{{ priority.value }}</span>
+      </div></hlm-option
+    >
+  </hlm-select-content>
+</brn-select>

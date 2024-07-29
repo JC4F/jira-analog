@@ -1,0 +1,49 @@
+<div data-issues class="touch-manipulation cursor-grab flex flex-1 shadow mb-1">
+  <div
+    tabindex="0"
+    data-issue
+    (click)="openIssueModal(issue.id)"
+    class="flex flex-col rounded-sm bg-white transition-all duration-100 select-none flex-1 p-[10px] shadow hover:bg-secondary">
+    <p class="pb-3">
+      {{ issue.title }}
+    </p>
+    <div class="flex items-center justify-between">
+      <div class="flex items-center ml-1">
+        <hlm-tooltip *ngFor="let user of assignees">
+          <base-avatar
+            hlmTooltipTrigger
+            position="below"
+            [className]="'shadow -ml-1'"
+            [size]="24"
+            [avatarUrl]="user.avatarUrl"></base-avatar>
+          <span *brnTooltipContent>Assignee: {{ user.name }}</span>
+        </hlm-tooltip>
+        <span [class.ml-3]="assignees.length" class="uppercase">
+          {{ issue.iss_type }}-{{ issue.id }}
+        </span>
+      </div>
+      <div class="flex items-center">
+        <hlm-tooltip>
+          <svg-icon
+            hlmTooltipTrigger
+            position="below"
+            class="mr-1"
+            [name]="issueTypeIcon"
+            [size]="20">
+          </svg-icon>
+          <span *brnTooltipContent>{{ issue.iss_type }}</span>
+        </hlm-tooltip>
+
+        <hlm-tooltip>
+          <svg-icon
+            hlmTooltipTrigger
+            position="below"
+            [name]="priorityIcon.icon"
+            [size]="20"
+            [style.color]="priorityIcon.color"></svg-icon>
+          <span *brnTooltipContent>{{ priorityIcon.value }}</span>
+        </hlm-tooltip>
+      </div>
+    </div>
+  </div>
+</div>

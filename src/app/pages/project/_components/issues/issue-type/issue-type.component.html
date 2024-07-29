@@ -1,0 +1,29 @@
+<div class="-ml-3">
+  <button
+    hlmBtn
+    variant="ghost"
+    [brnMenuTriggerFor]="menu"
+    [className]="'font-semibold uppercase'">
+    <svg-icon [name]="selectedIssueTypeIcon" [size]="20" />
+    <span class="ml-1">{{ issue.iss_type }}-{{ issue.id }}</span>
+  </button>
+</div>
+
+<ng-template #menu>
+  <hlm-menu>
+    <ul>
+      <ng-container *ngFor="let option of issueTypes">
+        <li
+          tabindex="0"
+          hlmMenuItem
+          *ngIf="!isTypeSelected(option.value)"
+          (click)="updateIssue(option.value)">
+          <div class="flex items-center">
+            <svg-icon [name]="option.icon" [size]="20"> </svg-icon>
+            <span class="ml-3 font-semibold uppercase">{{ option.value }}</span>
+          </div>
+        </li>
+      </ng-container>
+    </ul>
+  </hlm-menu>
+</ng-template>

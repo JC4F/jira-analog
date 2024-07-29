@@ -1,0 +1,26 @@
+<div class="mb-1 uppercase font-bold">Status</div>
+<button
+  hlmBtn
+  variant="destructive"
+  [brnMenuTriggerFor]="menu"
+  class="uppercase h-[34px]">
+  {{ IssueStatusDisplay[issue.status] }}
+</button>
+
+<ng-template #menu>
+  <hlm-menu>
+    <ul>
+      <ng-container *ngFor="let option of issueStatuses">
+        <li
+          tabindex="0"
+          hlmMenuItem
+          *ngIf="!isStatusSelected(option.value)"
+          (click)="updateIssue(option.value)">
+          <div class="flex items-center">
+            <span class="ml-3 font-semibold uppercase">{{ option.label }}</span>
+          </div>
+        </li>
+      </ng-container>
+    </ul>
+  </hlm-menu>
+</ng-template>
