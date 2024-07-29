@@ -1,15 +1,18 @@
 <aside>
   <div
-    class="h-screen w-[64px] pt-6 pb-5 flex flex-col bg-secondary flex-shrink-0 gap-4 border-r">
+    class="h-screen w-[64px] pt-6 pb-5 flex flex-col bg-secondary flex-shrink-0 gap-4 border-r"
+  >
     <div
       class="relative flex items-center justify-center"
-      title="Angular Jira Clone by JC4F">
+      title="Angular Jira Clone by JC4F"
+    >
       <jira-icon />
     </div>
 
     <div
       *ngFor="let item of items"
-      class="relative w-full flex items-center justify-center m-h-[42px]">
+      class="relative w-full flex items-center justify-center m-h-[42px]"
+    >
       <hlm-tooltip>
         <button
           hlmBtn
@@ -18,22 +21,45 @@
           hlmTooltipTrigger
           position="right"
           (click)="item.handler()"
-          class="hover:bg-[rgba(0,0,0,0.04)]">
-          <navbar-icon [type]="item.icon" class="h-6" />
+        >
+          <navbar-icon class="" [type]="item.icon" class="h-6" />
         </button>
         <span *brnTooltipContent>{{ item.tooltip }}</span>
       </hlm-tooltip>
     </div>
     <div class="flex-auto"></div>
+
+    <div class="w-full flex items-center justify-center min-h-[42px]">
+      <hlm-tooltip>
+        <button
+          hlmBtn
+          size="icon"
+          variant="ghost"
+          hlmTooltipTrigger
+          position="right"
+          (click)="toggleTheme()"
+        >
+          <hlm-icon
+            class="h-6"
+            [size]="'base'"
+            [name]="(theme$ | async) === 'light' ? 'lucideSun' : 'lucideMoon'"
+          />
+        </button>
+        <span *brnTooltipContent>Toggle theme</span>
+      </hlm-tooltip>
+    </div>
+
     <div
       class="relative w-full flex items-center justify-center min-h-[42px]"
-      *ngIf="user$ | async as user">
+      *ngIf="user$ | async as user"
+    >
       <hlm-tooltip>
         <div
           tabindex="0"
           hlmTooltipTrigger
           position="right"
-          class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 select-none transition-colors duration-100 cursor-pointer hover:bg-blue-400">
+          class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 select-none transition-colors duration-100 cursor-pointer hover:bg-blue-400"
+        >
           <base-avatar class="flex" [avatarUrl]="user.avatarUrl" [size]="26" />
         </div>
         <span *brnTooltipContent>{{ user.name }}</span>
@@ -44,7 +70,7 @@
         <button brnPopoverTrigger>
           <hlm-tooltip>
             <div tabindex="0" hlmTooltipTrigger position="right">
-              <hlm-icon size="base" name="lucideShieldQuestion" />
+              <hlm-icon class="" size="base" name="lucideShieldQuestion" />
             </div>
             <span *brnTooltipContent>About</span>
           </hlm-tooltip>
@@ -53,7 +79,7 @@
           <div class="max-w-[270px]">
             <p class="mb-2">
               This is a <strong>simplified</strong> Jira clone built with
-              Angular, Akita and ng-zorro
+              Angular, Ngrx, Spartan UI
             </p>
             <p class="mb-2">
               Thanks a bunch for stopping by and supporting me!
@@ -65,7 +91,7 @@
               >
             </p>
             <a href="https://jc4f.com/" target="_blank">
-              <button hlmBtn className="btn-primary">Visit My Blog</button>
+              <button hlmBtn>Visit My Blog</button>
             </a>
           </div>
         </div>

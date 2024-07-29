@@ -1,3 +1,4 @@
+import { ThemeService } from '@/services';
 import { AvatarComponent } from '@/shared/components/avatar/avatar.component';
 import { JiraIconComponent } from '@/shared/components/icons';
 import { HlmButtonDirective } from '@/shared/components/spartans/ui-button-helm/src';
@@ -10,7 +11,7 @@ import { RootState } from '@/stores/root-store';
 import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { provideIcons } from '@ng-icons/core';
-import { lucideShieldQuestion } from '@ng-icons/lucide';
+import { lucideMoon, lucideShieldQuestion, lucideSun } from '@ng-icons/lucide';
 import { Store } from '@ngrx/store';
 import {
   BrnPopoverCloseDirective,
@@ -56,12 +57,15 @@ type Handler = () => void;
     HlmPopoverCloseDirective,
     JiraIconComponent,
   ],
-  providers: [provideIcons({ lucideShieldQuestion })],
+  providers: [provideIcons({ lucideShieldQuestion, lucideSun, lucideMoon })],
 })
 export class NavbarLeftComponent implements OnInit {
   private readonly _hlmDialogService = inject(HlmDialogService);
   private readonly _hlmSheetService = inject(HlmSheetService);
   private _store = inject<Store<RootState>>(Store<RootState>);
+  private _themeService = inject(ThemeService);
+  public theme$ = this._themeService.theme$;
+
   items: NavItem[] = [];
   user$ = this._store.select(state => state.user);
 
@@ -70,6 +74,10 @@ export class NavbarLeftComponent implements OnInit {
       new NavItem('search', 'Search issues', this.openSearchDrawler.bind(this)),
       new NavItem('plus', 'Create issue', this.openCreateIssueModal.bind(this)),
     ];
+  }
+
+  toggleTheme() {
+    this._themeService.toggleDarkMode();
   }
 
   openCreateIssueModal() {
