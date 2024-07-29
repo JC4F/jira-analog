@@ -14,6 +14,6 @@ export class UserService {
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   login(_data: LoginPayload) {
-    return this.http.get<LoginResponse>(`${this.baseUrl}/auth.json`);
+    return this.http.get<LoginResponse>(`${this.baseUrl}/user`);
   }
 }

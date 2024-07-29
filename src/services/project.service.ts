@@ -13,6 +13,6 @@ export class ProjectService {
   }
 
   fetchProject() {
-    return this.http.get<projectResponse>(`${this.baseUrl}/project.json`);
+    return this.http.get<projectResponse>(`${this.baseUrl}/project`);
   }
 }

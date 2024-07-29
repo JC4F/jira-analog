@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { HlmButtonDirective } from '@spartan-ng/ui-button-helm';
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-markting',
   standalone: true,
   template: `
     <div
@@ -13,4 +13,4 @@ import { HlmButtonDirective } from '@spartan-ng/ui-button-helm';
   `,
   imports: [HlmButtonDirective],
 })
-export default class HomeComponent {}
+export default class MarketingComponent { }
