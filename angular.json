@@ -16,13 +16,6 @@
             "main": "src/main.ts",
             "outputPath": "dist/client",
             "tsConfig": "tsconfig.app.json",
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "src/assets/",
-                "output": "/assets/"
-              }
-            ],
             "styles": [
               "src/styles.css",
               "./node_modules/quill/dist/quill.core.css",
