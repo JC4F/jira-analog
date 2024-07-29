@@ -16,7 +16,7 @@ export const initialState: AuthState = {
   issueIds: [],
   createdAt: '',
   updatedAt: '',
-  isLoading: false,
+  isLoading: true,
 };
 
 export const userReducer = createFeature({
