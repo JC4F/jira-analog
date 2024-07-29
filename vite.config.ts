@@ -1,5 +1,4 @@
 /// <reference types="vitest" />
-/// <reference types="@types/node" />
 
 import analog from '@analogjs/platform';
 import { defineConfig } from 'vite';
@@ -9,6 +8,9 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 export default defineConfig(({ mode }) => ({
   build: {
     target: ['es2020'],
+  },
+  ssr: {
+    noExternal: ['@spartan-ng/**'],
   },
   resolve: {
     mainFields: ['module'],
