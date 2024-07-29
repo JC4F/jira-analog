@@ -17,12 +17,55 @@
     "importHelpers": true,
     "target": "ES2022",
     "module": "ES2022",
-    "lib": ["ES2022", "dom"],
+    "lib": [
+      "ES2022",
+      "dom"
+    ],
     "useDefineForClassFields": false,
     "skipLibCheck": true,
     "paths": {
+      "@/*": ["./src/*"],
       "@spartan-ng/ui-button-helm": [
-        "src/shared/components/spartans/ui-button-helm/src/index.ts"
+        "./src/shared/components/spartans/ui-button-helm/src/index.ts"
+      ],
+      "@spartan-ng/ui-avatar-helm": [
+        "./src/shared/components/spartans/ui-avatar-helm/src/index.ts"
+      ],
+      "@spartan-ng/ui-checkbox-helm": [
+        "./src/shared/components/spartans/ui-checkbox-helm/src/index.ts"
+      ],
+      "@spartan-ng/ui-icon-helm": [
+        "./src/shared/components/spartans/ui-icon-helm/src/index.ts"
+      ],
+      "@spartan-ng/ui-dialog-helm": [
+        "./src/shared/components/spartans/ui-dialog-helm/src/index.ts"
+      ],
+      "@spartan-ng/ui-input-helm": [
+        "./src/shared/components/spartans/ui-input-helm/src/index.ts"
+      ],
+      "@spartan-ng/ui-label-helm": [
+        "./src/shared/components/spartans/ui-label-helm/src/index.ts"
+      ],
+      "@spartan-ng/ui-menu-helm": [
+        "./src/shared/components/spartans/ui-menu-helm/src/index.ts"
+      ],
+      "@spartan-ng/ui-popover-helm": [
+        "./src/shared/components/spartans/ui-popover-helm/src/index.ts"
+      ],
+      "@spartan-ng/ui-select-helm": [
+        "./src/shared/components/spartans/ui-select-helm/src/index.ts"
+      ],
+      "@spartan-ng/ui-sheet-helm": [
+        "./src/shared/components/spartans/ui-sheet-helm/src/index.ts"
+      ],
+      "@spartan-ng/ui-sonner-helm": [
+        "./src/shared/components/spartans/ui-sonner-helm/src/index.ts"
+      ],
+      "@spartan-ng/ui-spinner-helm": [
+        "./src/shared/components/spartans/ui-spinner-helm/src/index.ts"
+      ],
+      "@spartan-ng/ui-tooltip-helm": [
+        "./src/shared/components/spartans/ui-tooltip-helm/src/index.ts"
       ]
     }
   },
