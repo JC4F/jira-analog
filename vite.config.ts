@@ -10,7 +10,7 @@ export default defineConfig(({ mode }) => ({
     target: ['es2020'],
   },
   ssr: {
-    noExternal: ['@spartan-ng/**'],
+    noExternal: ['@spartan-ng/**', '@ngrx/effects', '@ngrx/effects/**', '@ngrx/store', '@ngrx/store/**'],
   },
   resolve: {
     mainFields: ['module'],
