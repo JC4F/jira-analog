@@ -22,7 +22,7 @@ export default defineConfig(({ mode }) => ({
     // },
   },
   plugins: [analog({
-    static: true,
+    ssr: false,
   }), tsconfigPaths()],
   test: {
     globals: true,
