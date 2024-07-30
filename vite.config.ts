@@ -22,10 +22,7 @@ export default defineConfig(({ mode }) => ({
     // },
   },
   plugins: [analog({
-    prerender: {
-      routes: [],
-    },
-    jit: false,
+    static: true,
   }), tsconfigPaths()],
   test: {
     globals: true,
