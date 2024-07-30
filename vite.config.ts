@@ -23,9 +23,6 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [analog({
     ssr: false,
-    prerender: {
-      routes: ['/', '/marketing'],
-    },
   }), tsconfigPaths()],
   test: {
     globals: true,
