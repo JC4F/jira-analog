@@ -25,7 +25,7 @@ export default defineConfig(({ mode }) => ({
     prerender: {
       routes: [],
     },
-    jit: true,
+    jit: false,
   }), tsconfigPaths()],
   test: {
     globals: true,
