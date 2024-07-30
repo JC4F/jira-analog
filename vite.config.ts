@@ -21,7 +21,11 @@ export default defineConfig(({ mode }) => ({
     //   ),
     // },
   },
-  plugins: [analog(), tsconfigPaths()],
+  plugins: [analog({
+    prerender: {
+      routes: ['/', '/marketing'],
+    },
+  }), tsconfigPaths()],
   test: {
     globals: true,
     environment: 'jsdom',
